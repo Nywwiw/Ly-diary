@@ -1363,6 +1363,7 @@
 
     // PIN settings
     const DEFAULT_PIN = "231247";
+    const DATA_VERSION = 1713000000000;
 
     // Auto-check on load (checks session, localStorage, and URL parameter)
     window.addEventListener('DOMContentLoaded', () => {
@@ -1516,16 +1517,18 @@
       showToast('🔑 เปลี่ยนรหัสผ่าน PIN 6 หลักใหม่สำเร็จแล้ว!');
     }
 
-    // Data Management
+    // Data Management: Viewers และ Admin เห็นเรื่องตรงกัน 100%
     function loadData() {
-      // 🌟 สำหรับคนทั่วไปที่เข้ามาดู: ให้แสดงข้อมูลล่าสุดจากไฟล์เว็บเสมอ ไม่จำของเก่า
-      if (!isAdmin) {
-        diaryEntries = [...DEFAULT_DATA];
-        return;
-      }
-
-      // 👑 สำหรับเจ้าของเว็บ (Admin): โหลดจาก LocalStorage เพื่อให้แก้ไขหรือบันทึกต่อได้
       try {
+        const savedVer = localStorage.getItem('my_ly_diary_version');
+        // ถ้าไฟล์เว็บมีเวอร์ชันใหม่กว่า ให้ดึงข้อมูลล่าสุดจาก DEFAULT_DATA เสมอ
+        if (!savedVer || parseInt(savedVer) < DATA_VERSION) {
+          diaryEntries = [...DEFAULT_DATA];
+          localStorage.setItem('my_ly_diary_version', DATA_VERSION.toString());
+          saveData();
+          return;
+        }
+
         const stored = localStorage.getItem('my_ly_diary_data') || localStorage.getItem('my_anime_diary_data');
         if (stored) {
           const parsed = JSON.parse(stored);
@@ -2078,10 +2081,16 @@
         docHtml = docHtml.replace(/<body[^>]*>/, '<body class="is-viewer">');
 
         const currentJson = JSON.stringify(diaryEntries, null, 2);
+        const newVer = Date.now();
+        docHtml = docHtml.replace(
+          /const DATA_VERSION = \d+;/,
+          'const DATA_VERSION = ' + newVer + ';'
+        );
         docHtml = docHtml.replace(
           /const DEFAULT_DATA = \[([\s\S]*?)\];/,
           'const DEFAULT_DATA = ' + currentJson + ';'
         );
+        localStorage.setItem('my_ly_diary_version', newVer.toString());
         const blob = new Blob([docHtml], { type: 'text/html;charset=utf-8' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');

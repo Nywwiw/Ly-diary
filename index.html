@@ -1007,9 +1007,7 @@
         <div class="form-group">
           <input type="password" id="admin-pin-input" class="form-control pin-input" maxlength="6" placeholder="••••••" autofocus required autocomplete="off">
         </div>
-        <div style="font-size:0.8rem; color:#8E8295; margin-bottom:20px;">
-          (รหัสผ่านเจ้าของคือ: <strong style="color:#FF6B8B;">231247</strong> สามารถเปลี่ยนได้หลังเข้าสู่ระบบ)
-        </div>
+        
 
         <div style="display:flex; justify-content:center; gap:12px;">
           <button type="button" class="btn" style="background:#F0EBF8; color:var(--text-muted);" onclick="closeModal('login-modal')">ยกเลิก</button>
@@ -2059,7 +2057,15 @@
     // Export Updated index.html with current data
     function exportUpdatedIndexHtml() {
       try {
+        // Close modal first before taking snapshot
+        closeModal('backup-modal');
         let docHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        
+        // Ensure all modals are closed in exported file
+        docHtml = docHtml.replace(/modal-overlay active/g, 'modal-overlay');
+        // Ensure exported file starts in viewer mode
+        docHtml = docHtml.replace(/<body[^>]*>/, '<body class="is-viewer">');
+
         const currentJson = JSON.stringify(diaryEntries, null, 2);
         docHtml = docHtml.replace(
           /const DEFAULT_DATA = \[([\s\S]*?)\];/,

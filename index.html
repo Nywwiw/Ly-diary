@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌸 Ly diary • สมุดบันทึกเรื่องโปรดของฉัน ✨</title>
+  <!-- Google Fonts: Mali & Kanit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Mali:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FFFDF9;
+      --bg-soft: #FDF7F2;
+      --pastel-pink: #FFB7B2;
+      --pastel-pink-soft: #FFE5EC;
+      --pastel-pink-deep: #FF6B8B;
+      --pastel-purple: #B8A7EA;
+      --pastel-purple-soft: #F2ECFF;
+      --pastel-mint: #95D5B2;
+      --pastel-mint-soft: #E8F5E9;
+      --pastel-peach: #FFDAC1;
+      --pastel-peach-soft: #FFF2E6;
+      --pastel-yellow: #FFEAA7;
+      --pastel-blue: #A2D2FF;
+      --pastel-blue-soft: #EBF4FF;
+      --pastel-bl: #FFAAA6;
+      --pastel-bl-soft: #FFF0F0;
+      --text-main: #4A4050;
+      --text-muted: #8E8295;
+      --card-shadow: 0 10px 25px rgba(184, 167, 234, 0.16);
+      --card-shadow-hover: 0 16px 36px rgba(255, 107, 139, 0.22);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Mali', 'Kanit', sans-serif;
+      background-color: var(--bg-cream);
+      background-image: 
+        radial-gradient(#FFE5EC 1.5px, transparent 1.5px),
+        radial-gradient(#F2ECFF 1.5px, var(--bg-cream) 1.5px);
+      background-size: 36px 36px;
+      background-position: 0 0, 18px 18px;
+      color: var(--text-main);
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      padding: 40px 0 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--pastel-pink-soft), var(--pastel-purple-soft));
+      border: 1.5px solid #FFD1DC;
+      padding: 6px 22px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      color: var(--pastel-pink-deep);
+      font-weight: 600;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(255, 183, 178, 0.25);
+    }
+
+    h1.main-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #3B2E4A;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    h1.main-title .gradient-text {
+      background: linear-gradient(45deg, #FF6B8B, #B8A7EA, #FF9EAA, #48CAE4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-bottom: 35px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--card-shadow);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 2px solid transparent;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .stat-card.all { border-color: #E2D4F0; }
+    .stat-card.anime { border-color: #BEE1E6; }
+    .stat-card.manga { border-color: #FFEAA7; }
+    .stat-card.manhwa { border-color: #C1E1C1; }
+    .stat-card.bl { border-color: #FFC6FF; }
+    .stat-card.favorite { border-color: #FFB7B2; }
+
+    .stat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .stat-card.all .stat-icon { background: var(--pastel-purple-soft); }
+    .stat-card.anime .stat-icon { background: var(--pastel-blue-soft); }
+    .stat-card.manga .stat-icon { background: var(--pastel-peach-soft); }
+    .stat-card.manhwa .stat-icon { background: var(--pastel-mint-soft); }
+    .stat-card.bl .stat-icon { background: #FFEAF8; }
+    .stat-card.favorite .stat-icon { background: var(--pastel-pink-soft); }
+
+    .stat-info .stat-num {
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #3B2E4A;
+    }
+
+    .stat-info .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Control Box */
+    .controls-wrapper {
+      background: white;
+      padding: 20px 24px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--card-shadow);
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    /* Category Type Tabs */
+    .category-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tab-btn {
+      border: none;
+      background: var(--bg-soft);
+      padding: 9px 18px;
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .tab-btn:hover {
+      background: var(--pastel-pink-soft);
+      color: var(--pastel-pink-deep);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #FF8FA3, #B8A7EA);
+      color: white;
+      box-shadow: 0 4px 14px rgba(255, 143, 163, 0.38);
+    }
+
+    /* Sub-filters (Status Pills) */
+    .subfilter-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px dashed #F0E8F6;
+    }
+
+    .subfilter-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-right: 4px;
+      font-weight: 600;
+    }
+
+    .pill-btn {
+      border: 1px solid #EAE3F0;
+      background: white;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: #635868;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+
+    .pill-btn:hover {
+      background: #FDF5FA;
+      border-color: #FFB7B2;
+      color: #FF6B8B;
+    }
+
+    .pill-btn.active {
+      background: #FFE5EC;
+      border-color: #FF8FA3;
+      color: #E11D48;
+      font-weight: 600;
+    }
+
+    /* Buttons */
+    .btn {
+      font-family: inherit;
+      border: none;
+      outline: none;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #FF6B8B, #FF8FA3);
+      color: white;
+      box-shadow: 0 6px 18px rgba(255, 107, 139, 0.35);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 8px 22px rgba(255, 107, 139, 0.5);
+    }
+
+    .btn-secondary {
+      background: var(--pastel-purple-soft);
+      color: #6C5CE7;
+      border: 1.5px solid #D8C7F8;
+    }
+
+    .btn-secondary:hover {
+      background: #E8DDFF;
+    }
+
+    /* Search & Sort */
+    .search-filter-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 250px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 18px 12px 42px;
+      border-radius: 50px;
+      border: 1.5px solid #EAE3F0;
+      background: var(--bg-soft);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .search-box input:focus {
+      border-color: #B8A7EA;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(184, 167, 234, 0.25);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .sort-select {
+      padding: 10px 20px;
+      border-radius: 50px;
+      border: 1.5px solid #EAE3F0;
+      background: var(--bg-soft);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Grid */
+    .anime-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 26px;
+    }
+
+    /* Empty State */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 2px dashed #E2D4F0;
+    }
+
+    .empty-state .emoji {
+      font-size: 4rem;
+      margin-bottom: 12px;
+      display: block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Card */
+    .anime-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border: 2px solid #F6EFFB;
+    }
+
+    .anime-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: #FFD1DC;
+    }
+
+    .card-cover {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      background: linear-gradient(135deg, #FFE5EC, #F2ECFF);
+      overflow: hidden;
+    }
+
+    .card-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .anime-card:hover .card-cover img {
+      transform: scale(1.05);
+    }
+
+    .cover-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #9A8C98;
+      font-size: 3rem;
+      gap: 8px;
+    }
+    .cover-fallback span {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Badges on Cover */
+    .type-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .type-badge.anime { background: rgba(235, 244, 255, 0.95); color: #1D4ED8; border: 1px solid #BFDBFE; }
+    .type-badge.manga { background: rgba(255, 242, 230, 0.95); color: #C2410C; border: 1px solid #FED7AA; }
+    .type-badge.manhwa { background: rgba(232, 245, 233, 0.95); color: #15803D; border: 1px solid #BBF7D0; }
+    .type-badge.bl { background: rgba(255, 234, 248, 0.95); color: #BE185D; border: 1px solid #FBCFE8; }
+
+    .status-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .status-badge.completed { color: #2D6A4F; background: rgba(232, 245, 233, 0.95); border: 1px solid #B7E4C7; }
+    .status-badge.in_progress { color: #D97706; background: rgba(254, 243, 199, 0.95); border: 1px solid #FDE68A; }
+    .status-badge.plan { color: #4338CA; background: rgba(238, 242, 255, 0.95); border: 1px solid #C7D2FE; }
+
+    .fav-toggle-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      transition: all 0.2s ease;
+    }
+
+    .fav-toggle-btn:hover {
+      transform: scale(1.15);
+    }
+
+    .fav-toggle-btn.is-fav {
+      background: #FFE5EC;
+      color: #FF4D6D;
+    }
+
+    /* Card Body */
+    .card-body {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: #2F2235;
+      margin-bottom: 6px;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .card-title:hover {
+      color: #FF6B8B;
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .score-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #FFF8E1;
+      color: #B45309;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 4px 11px;
+      border-radius: 20px;
+      border: 1px solid #FDE68A;
+    }
+
+    .progress-counter {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-review-snippet {
+      font-size: 0.9rem;
+      color: #635868;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      background: #FDF9FF;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      border-left: 3px solid #B8A7EA;
+      font-style: italic;
+    }
+
+    .tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+      margin-top: auto;
+    }
+
+    .tag-item {
+      font-size: 0.75rem;
+      background: #F0EBF8;
+      color: #6D597A;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-weight: 500;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      border-top: 1px dashed #EDE4F4;
+      padding-top: 12px;
+    }
+
+    .card-btn {
+      flex: 1;
+      padding: 7px 10px;
+      border-radius: 8px;
+      border: none;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }
+
+    .card-btn-view { background: var(--pastel-pink-soft); color: #E63946; }
+    .card-btn-view:hover { background: #FFD1DC; }
+
+    .card-btn-edit { background: var(--pastel-purple-soft); color: #6C5CE7; }
+    .card-btn-edit:hover { background: #E4D8FF; }
+
+    .card-btn-del { background: #FDE8E8; color: #E53E3E; }
+    .card-btn-del:hover { background: #FCD2D2; }
+
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(59, 46, 74, 0.45);
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-card {
+      background: white;
+      width: 100%;
+      max-width: 620px;
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: scale(0.95) translateY(10px);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 3px solid #FFF0F5;
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      border-bottom: 2px dashed #F2E9F6;
+      padding-bottom: 14px;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #3B2E4A;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .modal-close {
+      background: #F0EBF8;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .modal-close:hover {
+      background: #FFD1DC;
+      color: #FF6B8B;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #4A4050;
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #E4D9EB;
+      background: #FDFBFE;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: #B8A7EA;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(184, 167, 234, 0.2);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .image-preview-box {
+      width: 100%;
+      height: 160px;
+      border-radius: var(--radius-sm);
+      border: 2px dashed #DCCFE8;
+      background: #FAF7FC;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-top: 8px;
+      position: relative;
+    }
+
+    .image-preview-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .star-rating-select {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    .star-item {
+      color: #D3C9D9;
+      transition: color 0.15s, transform 0.15s;
+    }
+
+    .star-item.active {
+      color: #FFB703;
+    }
+
+    .star-item:hover {
+      transform: scale(1.2);
+    }
+
+    .rating-value-display {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #B45309;
+      margin-left: 10px;
+    }
+
+    /* Detail Modal Specifics */
+    .detail-cover {
+      width: 100%;
+      max-height: 280px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 20px;
+      background: #F8F4FA;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .detail-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail-diary-paper {
+      background: #FFFDF8;
+      border: 1px solid #F5E8D8;
+      background-image: repeating-linear-gradient(transparent, transparent 27px, #F0E6D8 28px);
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      line-height: 28px;
+      font-size: 1rem;
+      color: #4A3E3D;
+      white-space: pre-wrap;
+      margin: 16px 0;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .detail-meta-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      background: #FAF7FC;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      margin-bottom: 18px;
+    }
+
+    .detail-meta-item .meta-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .detail-meta-item .meta-val {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #3B2E4A;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: white;
+      padding: 14px 22px;
+      border-radius: 50px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      border-left: 5px solid #FF6B8B;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 2000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      h1.main-title { font-size: 2.2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .controls-wrapper { padding: 14px; }
+      .top-actions { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="brand-badge">✨ My Cozy Reading & Watching Haven 🌸</div>
+      <h1 class="main-title">
+        <span>🌸 Ly diary</span>
+        <span class="gradient-text">สมุดบันทึกเรื่องโปรด</span>
+      </h1>
+      <p class="subtitle">บันทึกความประทับใจ คะแนน และรีวิวอนิเมะ มังงะ มันฮวา และนิยาย/การ์ตูน BL ที่เคยอ่านและเคยดู ✨</p>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card all" onclick="setCategoryFilter('all')">
+          <div class="stat-icon">📚</div>
+          <div class="stat-info">
+            <div class="stat-num" id="stat-total">0</div>
+            <div class="stat-label">บันทึกทั้งหมด</div>
+          </div>
+        </div>
+        <div class="stat-card anime" onclick="setCategoryFilter('anime')">
+          <div class="stat-icon">📺</div>
+          <div class="stat-info">
+            <div class="stat-num" id="stat-anime">0</div>
+            <div class="stat-label">อนิเมะ (Anime)</div>
+          </div>
+        </div>
+        <div class="stat-card manga" onclick="setCategoryFilter('manga')">
+          <div class="stat-icon">📖</div>
+          <div class="stat-info">
+            <div class="stat-num" id="stat-manga">0</div>
+            <div class="stat-label">มังงะ (Manga)</div>
+          </div>
+        </div>
+        <div class="stat-card manhwa" onclick="setCategoryFilter('manhwa')">
+          <div class="stat-icon">📱</div>
+          <div class="stat-info">
+            <div class="stat-num" id="stat-manhwa">0</div>
+            <div class="stat-label">มันฮวา (Manhwa)</div>
+          </div>
+        </div>
+        <div class="stat-card bl" onclick="setCategoryFilter('bl')">
+          <div class="stat-icon">🎀</div>
+          <div class="stat-info">
+            <div class="stat-num" id="stat-bl">0</div>
+            <div class="stat-label">BL (Boy's Love)</div>
+          </div>
+        </div>
+        <div class="stat-card favorite" onclick="setStatusFilter('favorite')">
+          <div class="stat-icon">💖</div>
+          <div class="stat-info">
+            <div class="stat-num" id="stat-fav">0</div>
+            <div class="stat-label">ชอบตลอดกาล</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Controls Bar -->
+    <div class="controls-wrapper">
+      <div class="top-actions">
+        <!-- Media Category Tabs -->
+        <div class="category-tabs" id="category-tabs">
+          <button class="tab-btn active" data-category="all">🌟 ทุกหมวดหมู่</button>
+          <button class="tab-btn" data-category="anime">📺 อนิเมะ</button>
+          <button class="tab-btn" data-category="manga">📖 มังงะ</button>
+          <button class="tab-btn" data-category="manhwa">📱 มันฮวา</button>
+          <button class="tab-btn" data-category="bl">🎀 BL (Boy's Love)</button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn btn-secondary" onclick="openBackupModal()">💾 สำรองข้อมูล</button>
+          <button class="btn btn-primary" onclick="openAddModal()">✨ บันทึกเรื่องใหม่</button>
+        </div>
+      </div>
+
+      <!-- Sub-filters: Status Pills -->
+      <div class="subfilter-row">
+        <span class="subfilter-label">สถานะ:</span>
+        <button class="pill-btn active" data-status="all" onclick="setStatusFilter('all')">ทั้งหมด</button>
+        <button class="pill-btn" data-status="completed" onclick="setStatusFilter('completed')">🌸 ดู/อ่านจบแล้ว</button>
+        <button class="pill-btn" data-status="in_progress" onclick="setStatusFilter('in_progress')">⏳ กำลังดู/กำลังอ่าน</button>
+        <button class="pill-btn" data-status="plan" onclick="setStatusFilter('plan')">📌 ลิสต์ไว้จะดู/อ่าน</button>
+        <button class="pill-btn" data-status="favorite" onclick="setStatusFilter('favorite')">💖 ชอบตลอดกาล</button>
+      </div>
+
+      <!-- Search & Sort Row -->
+      <div class="search-filter-row">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="ค้นหาชื่อเรื่อง, ตัวละคร/คู่ชิป, แนวเรื่อง หรือข้อความรีวิว..." oninput="handleSearch()">
+        </div>
+        <select class="sort-select" id="sort-select" onchange="handleSort()">
+          <option value="newest">🕒 เรียงตาม: บันทึกล่าสุด</option>
+          <option value="rating-desc">⭐ เรียงตาม: คะแนนสูงสุด</option>
+          <option value="rating-asc">🌟 เรียงตาม: คะแนนน้อยสุด</option>
+          <option value="title">🔤 เรียงตาม: ชื่อ ก-ฮ / A-Z</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="anime-grid" id="anime-grid"></div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>🌸 บันทึกด้วยใจใน Ly diary • จัดเก็บข้อมูลอัตโนมัติบนเบราว์เซอร์ของคุณ ✨</p>
+    </div>
+  </footer>
+
+  <!-- ================== ADD / EDIT MODAL ================== -->
+  <div class="modal-overlay" id="anime-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title">✨ เขียนบันทึกเรื่องใหม่ใน Ly diary</h2>
+        <button class="modal-close" onclick="closeModal('anime-modal')">✕</button>
+      </div>
+
+      <form id="anime-form" onsubmit="handleSaveEntry(event)">
+        <input type="hidden" id="edit-id" value="">
+
+        <!-- Title -->
+        <div class="form-group">
+          <label class="form-label" for="entry-title">ชื่อเรื่อง <span style="color:#FF6B8B">*</span></label>
+          <input type="text" id="entry-title" class="form-control" placeholder="เช่น Frieren, ทะเลสาบยามค่ำคืน, Cherry Magic..." required>
+        </div>
+
+        <!-- Category & Status -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="entry-category">หมวดหมู่ผลงาน <span style="color:#FF6B8B">*</span></label>
+            <select id="entry-category" class="form-control" required>
+              <option value="anime">📺 อนิเมะ (Anime)</option>
+              <option value="manga">📖 มังงะ (Manga)</option>
+              <option value="manhwa">📱 มันฮวา (Manhwa)</option>
+              <option value="bl">🎀 BL (Boy's Love)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="entry-status">สถานะ <span style="color:#FF6B8B">*</span></label>
+            <select id="entry-status" class="form-control" required>
+              <option value="completed">🌸 ดู/อ่านจบแล้ว (Completed)</option>
+              <option value="in_progress">⏳ กำลังดู/กำลังอ่าน (In Progress)</option>
+              <option value="plan">📌 ลิสต์ไว้จะดู/อ่าน (Plan to Read/Watch)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Favorite Checkbox -->
+        <div class="form-group">
+          <label style="display:inline-flex; align-items:center; gap:8px; cursor:pointer; font-weight:600; color:#E11D48; background:#FFF0F5; padding:8px 16px; border-radius:50px; border:1px solid #FFD1DC;">
+            <input type="checkbox" id="entry-is-fav" style="width:18px; height:18px; accent-color:#FF6B8B;">
+            💖 ยกให้เป็นเรื่องโปรดในดวงใจตลอดกาล!
+          </label>
+        </div>
+
+        <!-- Rating with Star Picker -->
+        <div class="form-group">
+          <label class="form-label">คะแนนความชอบ (1 - 10)</label>
+          <div style="display:flex; align-items:center; flex-wrap:wrap; gap:12px;">
+            <div class="star-rating-select" id="star-picker"></div>
+            <span class="rating-value-display" id="rating-text">⭐ 10 / 10</span>
+          </div>
+          <input type="hidden" id="entry-rating" value="10">
+        </div>
+
+        <!-- Progress (Episodes/Chapters) & Favorite Character / Couple -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="entry-progress">ความคืบหน้า (ตอน/เล่ม)</label>
+            <input type="text" id="entry-progress" class="form-control" placeholder="เช่น ตอนที่ 28/28 หรือ เล่ม 1-12 จบ">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="entry-character">ตัวละครโปรด / คู่ชิป (CP)</label>
+            <input type="text" id="entry-character" class="form-control" placeholder="เช่น คู่อึนฮยอกxซูฮยอน, ฟรีเรน">
+          </div>
+        </div>
+
+        <!-- Poster Image -->
+        <div class="form-group">
+          <label class="form-label">รูปภาพหน้าปก / โปสเตอร์</label>
+          <div class="image-input-choice">
+            <input type="text" id="entry-img-url" class="form-control" placeholder="วางลิงก์รูปภาพ (Image URL)..." oninput="previewImageFromUrl()">
+          </div>
+          <div style="font-size:0.85rem; color:var(--text-muted); margin:4px 0;">หรืออัปโหลดรูปจากเครื่องของคุณ:</div>
+          <input type="file" id="entry-img-file" accept="image/*" class="form-control" onchange="previewImageFromFile(event)">
+          
+          <div class="image-preview-box" id="img-preview-container">
+            <div class="cover-fallback" id="preview-fallback">
+              🖼️
+              <span>ตัวอย่างรูปจะแสดงที่นี่</span>
+            </div>
+            <img id="preview-img" src="" alt="preview" style="display:none;">
+          </div>
+        </div>
+
+        <!-- Tags / Genre -->
+        <div class="form-group">
+          <label class="form-label" for="entry-tags">แนวเรื่อง / แท็ก (คั่นด้วยจุลภาค)</label>
+          <input type="text" id="entry-tags" class="form-control" placeholder="เช่น โรแมนติก, ย้อนยุค, แฟนตาซี, ฟีลกู๊ด, ตับพัง">
+        </div>
+
+        <!-- Review & Thoughts -->
+        <div class="form-group">
+          <label class="form-label" for="entry-review">ความคิดเห็น & รีวิวความรู้สึกหลังดู/อ่าน (ไดอารี่ส่วนตัว) 📝</label>
+          <textarea id="entry-review" class="form-control" rows="4" placeholder="เขียนบันทึกความรู้สึก ฉากที่กรี๊ด ประทับใจ หรือสิ่งที่ชอบในเรื่องนี้..." style="resize:vertical;"></textarea>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:24px;">
+          <button type="button" class="btn" style="background:#F0EBF8; color:var(--text-muted);" onclick="closeModal('anime-modal')">ยกเลิก</button>
+          <button type="submit" class="btn btn-primary">💖 บันทึกลง Ly diary</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================== DETAIL VIEW MODAL ================== -->
+  <div class="modal-overlay" id="detail-modal">
+    <div class="modal-card" style="max-width: 680px;">
+      <div class="modal-header">
+        <h2 class="modal-title" id="detail-title">🌸 รายละเอียดเรื่องโปรด</h2>
+        <button class="modal-close" onclick="closeModal('detail-modal')">✕</button>
+      </div>
+
+      <div class="detail-cover" id="detail-cover-box">
+        <img id="detail-cover-img" src="" alt="cover">
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+        <div style="display:flex; gap:8px; align-items:center;" id="detail-badges-container"></div>
+        <div class="score-badge" id="detail-score" style="font-size:1.1rem; padding:6px 14px;">⭐ 10 / 10</div>
+      </div>
+
+      <div class="detail-meta-list">
+        <div class="detail-meta-item">
+          <div class="meta-label">📚 หมวดหมู่</div>
+          <div class="meta-val" id="detail-category-text">-</div>
+        </div>
+        <div class="detail-meta-item">
+          <div class="meta-label">📺 ความคืบหน้า</div>
+          <div class="meta-val" id="detail-progress">-</div>
+        </div>
+        <div class="detail-meta-item">
+          <div class="meta-label">💖 ตัวละคร/คู่โปรด</div>
+          <div class="meta-val" id="detail-character">-</div>
+        </div>
+        <div class="detail-meta-item">
+          <div class="meta-label">📅 วันที่บันทึก</div>
+          <div class="meta-val" id="detail-date">-</div>
+        </div>
+      </div>
+
+      <div class="tags-list" id="detail-tags-list"></div>
+
+      <div style="font-weight:700; color:#3B2E4A; font-size:1.1rem; margin-top:14px; display:flex; align-items:center; gap:8px;">
+        📝 ความคิดเห็น & ไดอารี่ความรู้สึก
+      </div>
+      <div class="detail-diary-paper" id="detail-review-text"></div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px; border-top:1px dashed #EDE4F4; padding-top:15px;">
+        <button class="btn btn-secondary" id="detail-edit-btn">✏️ แก้ไขข้อมูล</button>
+        <button class="btn" style="background:#F0EBF8; color:var(--text-muted);" onclick="closeModal('detail-modal')">ปิดหน้าต่าง</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================== BACKUP & RESTORE MODAL ================== -->
+  <div class="modal-overlay" id="backup-modal">
+    <div class="modal-card" style="max-width: 540px;">
+      <div class="modal-header">
+        <h2 class="modal-title">💾 สำรองและกู้คืนข้อมูล Ly diary</h2>
+        <button class="modal-close" onclick="closeModal('backup-modal')">✕</button>
+      </div>
+
+      <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:20px; line-height:1.6;">
+        ข้อมูลไดอารี่ทั้งหมดถูกจัดเก็บบนเว็บเบราว์เซอร์เครื่องนี้โดยอัตโนมัติ คุณสามารถดาวน์โหลดไฟล์สำรองข้อมูล (.json) เพื่อเก็บไว้ หรือนำไปใช้งานบนอุปกรณ์อื่นได้ทุกเมื่อ!
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="background:#FAF7FC; padding:18px; border-radius:var(--radius-sm); border:1px solid #EAE3F0;">
+          <h4 style="font-size:1.05rem; margin-bottom:6px; color:#3B2E4A;">📤 สำรองข้อมูล (Export JSON)</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">ดาวน์โหลดข้อมูลทั้งหมดเป็นไฟล์ .json เก็บไว้</p>
+          <button class="btn btn-primary" onclick="exportData()">💾 ดาวน์โหลดไฟล์สำรองข้อมูล</button>
+        </div>
+
+        <div style="background:#FAF7FC; padding:18px; border-radius:var(--radius-sm); border:1px solid #EAE3F0;">
+          <h4 style="font-size:1.05rem; margin-bottom:6px; color:#3B2E4A;">📥 นำเข้าข้อมูล (Import JSON)</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">เลือกไฟล์ .json ที่เคยสำรองไว้เพื่อนำข้อมูลกลับมา</p>
+          <input type="file" id="import-json-file" accept=".json" class="form-control" onchange="importData(event)">
+        </div>
+
+        <div style="text-align:center; margin-top:8px;">
+          <button class="btn" style="background:#FFF0F0; color:#E53E3E; border:1px solid #FFD1D1; font-size:0.85rem;" onclick="resetToSamplePrompt()">
+            🔄 รีเซ็ตกลับเป็นข้อมูลตัวอย่างเริ่มต้น
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span id="toast-icon">✨</span>
+    <span id="toast-msg">บันทึกข้อมูลสำเร็จ!</span>
+  </div>
+
+  <script>
+    // Rich Sample Data featuring Anime, Manga, Manhwa, and BL
+    const SAMPLE_ENTRIES = [
+      {
+        id: "sample-1",
+        title: "Frieren: Beyond Journey's End (คำอธิษฐานในวันที่จากลา)",
+        category: "anime",
+        status: "completed",
+        isFavorite: true,
+        rating: 10,
+        progress: "28/28 ตอนจบ",
+        character: "Frieren & Himmel",
+        imgUrl: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=700&auto=format&fit=crop&q=80",
+        tags: ["แฟนตาซี", "อบอุ่นหัวใจ", "ซึ้งกินใจ", "การผจญภัย"],
+        review: "อนิเมะอันดับหนึ่งในใจตลอดกาล เล่าเรื่องการเดินทางหลังจากปราบจอมมารได้ลึกซึ้งมาก ความทรงจำเล็กๆ ของฮิมเมลเปลี่ยนมุมมองชีวิตของฟรีเรนไปตลอดกาล ดูแล้วน้ำตาซึม เพลงประกอบอลังการ ภาพสวยไร้ที่ติ 100/10 ไปเลย!",
+        createdAt: "2026-03-15"
+      },
+      {
+        id: "sample-2",
+        title: "Cherry Magic! (30 ยังซิงกับเวทมนตร์พลังรัก)",
+        category: "bl",
+        status: "completed",
+        isFavorite: true,
+        rating: 10,
+        progress: "อนิเมะ 12 ตอน + มังงะเล่ม 1-13",
+        character: "คุโรซาวะ x อาดาจิ 🍒",
+        imgUrl: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=700&auto=format&fit=crop&q=80",
+        tags: ["BL", "โรแมนติกคอมเมดี้", "เวทมนตร์", "นุบนิบฮีลใจ"],
+        review: "ความน่ารักระดับทำลายล้าง คุโรซาวะคือพระเอกในอุดมคติที่อ่อนโยนและให้เกียรติอาดาจิที่สุด เสียงในใจของคุโรซาวะตอนคลั่งรักคือฮาและฟินไม่ไหว ดูจบแล้วหัวใจฟูทั้งวัน!",
+        createdAt: "2026-04-10"
+      },
+      {
+        id: "sample-3",
+        title: "Solo Leveling (เกิดใหม่ทั้งทีพี่ขอเทพ)",
+        category: "manhwa",
+        status: "completed",
+        isFavorite: true,
+        rating: 9.8,
+        progress: "ตอนที่ 1-179 (จบสมบูรณ์)",
+        character: "ซองจินอู (Sung Jin-woo)",
+        imgUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=700&auto=format&fit=crop&q=80",
+        tags: ["มันฮวา", "แอ็กชัน", "ฮันเตอร์", "พลังเงา", "ลายเส้นเทพ"],
+        review: "หนึ่งในตำนานมันฮวาเกาหลีที่ลายเส้นอลังการที่สุด ฉาก 'จงตื่น' ปลุกกองทัพเงาคือขนลุกระดับสิบ ซองจินอูเท่แบบไร้ขีดจำกัด อ่านรวดเดียวไม่หลับไม่นอน!",
+        createdAt: "2026-05-02"
+      },
+      {
+        id: "sample-4",
+        title: "Spy x Family",
+        category: "manga",
+        status: "in_progress",
+        isFavorite: true,
+        rating: 9.5,
+        progress: "เล่มที่ 13 (กำลังติดตาม)",
+        character: "น้องอาเนีย & บอนด์ 🥜",
+        imgUrl: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=700&auto=format&fit=crop&q=80",
+        tags: ["มังงะ", "คอมเมดี้", "ครอบครัว", "สายลับ"],
+        review: "เวอร์ชันมังงะจังหวะมุกตลกคมกริบ สีหน้ามีมของอาเนียคือที่สุดของความน่ารัก เป็นเรื่องที่หยิบมาอ่านซ้ำเวลาเหนื่อยๆ แล้วได้รอยยิ้มกลับมาเสมอ",
+        createdAt: "2026-06-18"
+      },
+      {
+        id: "sample-5",
+        title: "Painter of the Night (คืนรักภาพลวงตา)",
+        category: "bl",
+        status: "completed",
+        isFavorite: true,
+        rating: 9.2,
+        progress: "4 ซีซั่น (จบแล้ว)",
+        character: "ยุนซึงโฮ x แบคนากยอม",
+        imgUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700&auto=format&fit=crop&q=80",
+        tags: ["BL", "พีเรียดเกาหลี", "ดรามาเข้มข้น", "ลายเส้นวิจิตร"],
+        review: "งานภาพและลายเส้นระดับพรีเมียม สื่ออารมณ์ทางสายตาได้ถึงแก่น พัฒนาการความสัมพันธ์จากความรุนแรงสู่ความรักและการปกป้อง ซึงโฮตอนคลั่งรักนากยอมคือที่สุด!",
+        createdAt: "2026-07-04"
+      },
+      {
+        id: "sample-6",
+        title: "Omniscient Reader's Viewpoint (มุมมองนักอ่านเฉพาะกิจ)",
+        category: "manhwa",
+        status: "in_progress",
+        isFavorite: false,
+        rating: 9.6,
+        progress: "ตอนที่ 215 (กำลังอ่าน)",
+        character: "คิมดกจา x ยูจุงฮยอก",
+        imgUrl: "https://images.unsplash.com/photo-1563089145-599997674d42?w=700&auto=format&fit=crop&q=80",
+        tags: ["มันฮวา", "เอาชีวิตรอด", "แฟนตาซีลึกลับ", "มิตรภาพ"],
+        review: "พล็อตเรื่องฉลาดล้ำลึก การวางแผนและเคมีระหว่างดกจากับจุงฮยอกคือไฮไลต์ ยิ่งอ่านยิ่งวางไม่ลง รอคอยทุกตอนใหม่ใจจดใจจ่อ",
+        createdAt: "2026-08-20"
+      },
+      {
+        id: "sample-7",
+        title: "Sasaki and Miyano (ซาซากิกับมิยาโนะ)",
+        category: "manga",
+        status: "plan",
+        isFavorite: false,
+        rating: 0,
+        progress: "ซื้อเก็บไว้ รออ่านเล่ม 1-9",
+        character: "ซาซากิ & มิยาโนะ",
+        imgUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=700&auto=format&fit=crop&q=80",
+        tags: ["BL", "มังงะ", "โรงเรียน", "ละมุนหัวใจ"],
+        review: "ลิสต์ไว้ในคิวอ่านต่อ แฟนคลับสายฟีลกู๊ดบอกว่านุ่มฟูใจมาก พระเอกตามจีบรุ่นน้องน่ารักสุดๆ",
+        createdAt: "2026-09-12"
+      }
+    ];
+
+    // State
+    let diaryEntries = [];
+    let currentCategory = "all";
+    let currentStatus = "all";
+    let currentSearch = "";
+    let currentSort = "newest";
+    let selectedStarRating = 10;
+    let uploadedImageData = "";
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadData();
+      initStarPicker();
+      setupTabs();
+      renderStats();
+      renderGrid();
+    });
+
+    function loadData() {
+      // Check for updated key or migrate from old anime diary data if exists
+      const stored = localStorage.getItem('my_ly_diary_data') || localStorage.getItem('my_anime_diary_data');
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored);
+          diaryEntries = parsed.map(item => ({
+            ...item,
+            category: item.category || 'anime',
+            progress: item.progress || item.episodes || ''
+          }));
+        } catch (e) {
+          diaryEntries = [...SAMPLE_ENTRIES];
+        }
+      } else {
+        diaryEntries = [...SAMPLE_ENTRIES];
+        saveData();
+      }
+    }
+
+    function saveData() {
+      localStorage.setItem('my_ly_diary_data', JSON.stringify(diaryEntries));
+    }
+
+    // Star Picker
+    function initStarPicker() {
+      const picker = document.getElementById('star-picker');
+      picker.innerHTML = '';
+      for (let i = 1; i <= 10; i++) {
+        const star = document.createElement('span');
+        star.className = 'star-item' + (i <= selectedStarRating ? ' active' : '');
+        star.innerHTML = '★';
+        star.dataset.val = i;
+        star.onclick = () => setRating(i);
+        star.onmouseover = () => previewStar(i);
+        star.onmouseleave = () => resetStarHover();
+        picker.appendChild(star);
+      }
+      updateRatingDisplay();
+    }
+
+    function setRating(val) {
+      selectedStarRating = val;
+      document.getElementById('entry-rating').value = val;
+      updateRatingDisplay();
+    }
+
+    function previewStar(val) {
+      const stars = document.querySelectorAll('#star-picker .star-item');
+      stars.forEach(s => {
+        const v = parseInt(s.dataset.val);
+        s.classList.toggle('active', v <= val);
+      });
+      document.getElementById('rating-text').innerText = `⭐ ${val} / 10`;
+    }
+
+    function resetStarHover() {
+      updateRatingDisplay();
+    }
+
+    function updateRatingDisplay() {
+      const stars = document.querySelectorAll('#star-picker .star-item');
+      stars.forEach(s => {
+        const v = parseInt(s.dataset.val);
+        s.classList.toggle('active', v <= selectedStarRating);
+      });
+      document.getElementById('rating-text').innerText = `⭐ ${selectedStarRating} / 10`;
+    }
+
+    // Tab Navigation
+    function setupTabs() {
+      const catBtns = document.querySelectorAll('#category-tabs .tab-btn');
+      catBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          catBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = btn.dataset.category;
+          renderGrid();
+        });
+      });
+    }
+
+    function setCategoryFilter(cat) {
+      currentCategory = cat;
+      const catBtns = document.querySelectorAll('#category-tabs .tab-btn');
+      catBtns.forEach(b => b.classList.toggle('active', b.dataset.category === cat));
+      renderGrid();
+    }
+
+    function setStatusFilter(status) {
+      currentStatus = status;
+      const pillBtns = document.querySelectorAll('.subfilter-row .pill-btn');
+      pillBtns.forEach(b => b.classList.toggle('active', b.dataset.status === status));
+      renderGrid();
+    }
+
+    // Stats
+    function renderStats() {
+      const total = diaryEntries.length;
+      const animeCount = diaryEntries.filter(a => a.category === 'anime').length;
+      const mangaCount = diaryEntries.filter(a => a.category === 'manga').length;
+      const manhwaCount = diaryEntries.filter(a => a.category === 'manhwa').length;
+      const blCount = diaryEntries.filter(a => a.category === 'bl').length;
+      const favCount = diaryEntries.filter(a => a.isFavorite).length;
+
+      document.getElementById('stat-total').innerText = total;
+      document.getElementById('stat-anime').innerText = animeCount;
+      document.getElementById('stat-manga').innerText = mangaCount;
+      document.getElementById('stat-manhwa').innerText = manhwaCount;
+      document.getElementById('stat-bl').innerText = blCount;
+      document.getElementById('stat-fav').innerText = favCount;
+    }
+
+    // Filter & Sort
+    function getFilteredList() {
+      return diaryEntries.filter(item => {
+        // Category Filter
+        if (currentCategory !== 'all' && item.category !== currentCategory) {
+          return false;
+        }
+
+        // Status Filter
+        if (currentStatus === 'favorite') {
+          if (!item.isFavorite) return false;
+        } else if (currentStatus !== 'all') {
+          if (item.status !== currentStatus) return false;
+        }
+
+        // Search Query
+        if (currentSearch.trim() !== '') {
+          const q = currentSearch.toLowerCase().trim();
+          const titleMatch = (item.title || '').toLowerCase().includes(q);
+          const reviewMatch = (item.review || '').toLowerCase().includes(q);
+          const charMatch = (item.character || '').toLowerCase().includes(q);
+          const tagMatch = (item.tags || []).some(t => t.toLowerCase().includes(q));
+          if (!titleMatch && !reviewMatch && !charMatch && !tagMatch) return false;
+        }
+
+        return true;
+      }).sort((a, b) => {
+        if (currentSort === 'newest') {
+          return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
+        } else if (currentSort === 'rating-desc') {
+          return (b.rating || 0) - (a.rating || 0);
+        } else if (currentSort === 'rating-asc') {
+          return (a.rating || 0) - (b.rating || 0);
+        } else if (currentSort === 'title') {
+          return (a.title || '').localeCompare(b.title || '', 'th');
+        }
+        return 0;
+      });
+    }
+
+    // Render Cards
+    function renderGrid() {
+      const grid = document.getElementById('anime-grid');
+      const list = getFilteredList();
+
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <span class="emoji">🌸🍃</span>
+            <h3 style="font-size:1.4rem; color:#3B2E4A; margin-bottom:8px;">ยังไม่มีเรื่องในหมวดหมู่นี้เลย</h3>
+            <p style="color:var(--text-muted); margin-bottom:20px;">เพิ่มเรื่องใหม่ลงใน Ly diary หรือสลับไปดูแท็บอื่นได้เลยนะ!</p>
+            <button class="btn btn-primary" onclick="openAddModal()">✨ บันทึกเรื่องแรกในหมวดนี้</button>
+          </div>
+        `;
+        return;
+      }
+
+      const categoryLabels = {
+        anime: { text: "📺 อนิเมะ", cls: "anime" },
+        manga: { text: "📖 มังงะ", cls: "manga" },
+        manhwa: { text: "📱 มันฮวา", cls: "manhwa" },
+        bl: { text: "🎀 BL", cls: "bl" }
+      };
+
+      const statusLabels = {
+        completed: { text: "🌸 จบแล้ว", cls: "completed" },
+        in_progress: { text: "⏳ กำลังตาม", cls: "in_progress" },
+        plan: { text: "📌 ลิสต์ไว้", cls: "plan" }
+      };
+
+      grid.innerHTML = list.map(item => {
+        const catInfo = categoryLabels[item.category] || { text: item.category, cls: "anime" };
+        const statusInfo = statusLabels[item.status] || { text: item.status, cls: "completed" };
+
+        const imgSrc = item.imgUrl || item.imgData || "";
+        const imageElement = imgSrc 
+          ? `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(item.title)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'cover-fallback\'>📚<span>ไม่มีรูปภาพ</span></div>'">` 
+          : `<div class="cover-fallback">📚<span>ไม่มีรูปภาพ</span></div>`;
+
+        const tagBadges = (item.tags || []).slice(0, 3).map(t => `<span class="tag-item">#${escapeHtml(t)}</span>`).join('');
+
+        return `
+          <div class="anime-card" id="card-${item.id}">
+            <div class="card-cover" onclick="openDetailModal('${item.id}')" style="cursor:pointer;">
+              ${imageElement}
+              
+              <div class="type-badge ${catInfo.cls}">
+                ${catInfo.text}
+              </div>
+
+              <div class="status-badge ${statusInfo.cls}">
+                ${statusInfo.text}
+              </div>
+
+              <button class="fav-toggle-btn ${item.isFavorite ? 'is-fav' : ''}" 
+                      title="${item.isFavorite ? 'เรื่องโปรด' : 'กดเพื่อให้เป็นเรื่องโปรด'}"
+                      onclick="event.stopPropagation(); toggleFavorite('${item.id}')">
+                ${item.isFavorite ? '💖' : '🤍'}
+              </button>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title" onclick="openDetailModal('${item.id}')" title="${escapeHtml(item.title)}">
+                ${escapeHtml(item.title)}
+              </h3>
+
+              <div class="rating-row">
+                <div class="score-badge">
+                  ⭐ ${item.rating > 0 ? item.rating + ' / 10' : 'ยังไม่ให้คะแนน'}
+                </div>
+                <div class="progress-counter">
+                  ${item.category === 'anime' ? '📺' : '📖'} ${item.progress ? escapeHtml(item.progress) : '-'}
+                </div>
+              </div>
+
+              ${item.review ? `
+                <div class="card-review-snippet">
+                  "${escapeHtml(item.review)}"
+                </div>
+              ` : ''}
+
+              <div class="tags-list">
+                ${tagBadges}
+              </div>
+
+              <div class="card-actions">
+                <button class="card-btn card-btn-view" onclick="openDetailModal('${item.id}')">👁️ ดูรีวิว</button>
+                <button class="card-btn card-btn-edit" onclick="openEditModal('${item.id}')">✏️ แก้ไข</button>
+                <button class="card-btn card-btn-del" onclick="deleteEntry('${item.id}')">🗑️ ลบ</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Handlers
+    function handleSearch() {
+      currentSearch = document.getElementById('search-input').value;
+      renderGrid();
+    }
+
+    function handleSort() {
+      currentSort = document.getElementById('sort-select').value;
+      renderGrid();
+    }
+
+    function toggleFavorite(id) {
+      const item = diaryEntries.find(a => a.id === id);
+      if (item) {
+        item.isFavorite = !item.isFavorite;
+        saveData();
+        renderStats();
+        renderGrid();
+        showToast(item.isFavorite ? '💖 เพิ่มเข้าเรื่องโปรดตลอดกาลใน Ly diary แล้ว!' : '🤍 นำออกจากเรื่องโปรดแล้ว');
+      }
+    }
+
+    function deleteEntry(id) {
+      const item = diaryEntries.find(a => a.id === id);
+      if (!item) return;
+      if (confirm(`ต้องการลบเรื่อง "${item.title}" ออกจาก Ly diary หรือไม่?`)) {
+        diaryEntries = diaryEntries.filter(a => a.id !== id);
+        saveData();
+        renderStats();
+        renderGrid();
+        showToast('🗑️ ลบข้อมูลเรียบร้อยแล้ว');
+      }
+    }
+
+    // Modal Operations
+    function openAddModal() {
+      document.getElementById('modal-title').innerHTML = '✨ เขียนบันทึกเรื่องใหม่ใน Ly diary';
+      document.getElementById('edit-id').value = '';
+      document.getElementById('entry-title').value = '';
+      document.getElementById('entry-category').value = currentCategory !== 'all' ? currentCategory : 'anime';
+      document.getElementById('entry-status').value = 'completed';
+      document.getElementById('entry-is-fav').checked = false;
+      document.getElementById('entry-progress').value = '';
+      document.getElementById('entry-character').value = '';
+      document.getElementById('entry-img-url').value = '';
+      document.getElementById('entry-img-file').value = '';
+      document.getElementById('entry-tags').value = '';
+      document.getElementById('entry-review').value = '';
+      uploadedImageData = "";
+      
+      setRating(10);
+      resetImagePreview();
+
+      openModal('anime-modal');
+    }
+
+    function openEditModal(id) {
+      const item = diaryEntries.find(a => a.id === id);
+      if (!item) return;
+
+      document.getElementById('modal-title').innerHTML = '✏️ แก้ไขข้อมูลใน Ly diary';
+      document.getElementById('edit-id').value = item.id;
+      document.getElementById('entry-title').value = item.title;
+      document.getElementById('entry-category').value = item.category || 'anime';
+      document.getElementById('entry-status').value = item.status;
+      document.getElementById('entry-is-fav').checked = !!item.isFavorite;
+      document.getElementById('entry-progress').value = item.progress || item.episodes || '';
+      document.getElementById('entry-character').value = item.character || '';
+      document.getElementById('entry-img-url').value = item.imgUrl || '';
+      document.getElementById('entry-img-file').value = '';
+      document.getElementById('entry-tags').value = (item.tags || []).join(', ');
+      document.getElementById('entry-review').value = item.review || '';
+      
+      uploadedImageData = item.imgData || "";
+      setRating(item.rating || 10);
+
+      const previewImg = document.getElementById('preview-img');
+      const fallback = document.getElementById('preview-fallback');
+      const imgSrc = item.imgUrl || item.imgData;
+      if (imgSrc) {
+        previewImg.src = imgSrc;
+        previewImg.style.display = 'block';
+        fallback.style.display = 'none';
+      } else {
+        resetImagePreview();
+      }
+
+      openModal('anime-modal');
+    }
+
+    function openDetailModal(id) {
+      const item = diaryEntries.find(a => a.id === id);
+      if (!item) return;
+
+      document.getElementById('detail-title').innerText = item.title;
+
+      const categoryLabels = {
+        anime: "📺 อนิเมะ (Anime)",
+        manga: "📖 มังงะ (Manga)",
+        manhwa: "📱 มันฮวา (Manhwa)",
+        bl: "🎀 BL (Boy's Love)"
+      };
+
+      const statusLabels = {
+        completed: { text: "🌸 จบแล้ว", cls: "completed" },
+        in_progress: { text: "⏳ กำลังติดตาม", cls: "in_progress" },
+        plan: { text: "📌 ลิสต์ไว้จะดู/อ่าน", cls: "plan" }
+      };
+      const statusInfo = statusLabels[item.status] || { text: item.status, cls: "completed" };
+
+      const badgesContainer = document.getElementById('detail-badges-container');
+      badgesContainer.innerHTML = `
+        <span class="type-badge ${item.category}" style="position:static; display:inline-flex;">
+          ${categoryLabels[item.category] || item.category}
+        </span>
+        <span class="status-badge ${statusInfo.cls}" style="position:static; display:inline-flex;">
+          ${statusInfo.text}
+        </span>
+        ${item.isFavorite ? '<span style="font-size:0.85rem; background:#FFE5EC; color:#E11D48; padding:3px 10px; border-radius:50px; font-weight:700;">💖 ชอบตลอดกาล</span>' : ''}
+      `;
+
+      document.getElementById('detail-score').innerText = `⭐ ${item.rating > 0 ? item.rating + ' / 10' : 'ยังไม่ได้ให้คะแนน'}`;
+      document.getElementById('detail-category-text').innerText = categoryLabels[item.category] || item.category;
+      document.getElementById('detail-progress').innerText = item.progress || item.episodes || 'ไม่ระบุ';
+      document.getElementById('detail-character').innerText = item.character || 'ไม่ระบุ';
+      document.getElementById('detail-date').innerText = item.createdAt || 'ไม่ระบุ';
+
+      const coverImg = document.getElementById('detail-cover-img');
+      const coverBox = document.getElementById('detail-cover-box');
+      const imgSrc = item.imgUrl || item.imgData;
+      if (imgSrc) {
+        coverImg.src = imgSrc;
+        coverBox.style.display = 'block';
+      } else {
+        coverBox.style.display = 'none';
+      }
+
+      // Tags
+      const tagsContainer = document.getElementById('detail-tags-list');
+      if (item.tags && item.tags.length > 0) {
+        tagsContainer.innerHTML = item.tags.map(t => `<span class="tag-item">#${escapeHtml(t)}</span>`).join('');
+        tagsContainer.style.display = 'flex';
+      } else {
+        tagsContainer.style.display = 'none';
+      }
+
+      // Review
+      const reviewBox = document.getElementById('detail-review-text');
+      reviewBox.innerText = item.review || 'ยังไม่ได้เขียนบันทึกความรู้สึกสำหรับเรื่องนี้... แวะมากดแก้ไขเพื่อเขียนไดอารี่ได้นะ!';
+
+      document.getElementById('detail-edit-btn').onclick = () => {
+        closeModal('detail-modal');
+        openEditModal(item.id);
+      };
+
+      openModal('detail-modal');
+    }
+
+    function handleSaveEntry(e) {
+      e.preventDefault();
+      const editId = document.getElementById('edit-id').value;
+      const title = document.getElementById('entry-title').value.trim();
+      const category = document.getElementById('entry-category').value;
+      const status = document.getElementById('entry-status').value;
+      const isFavorite = document.getElementById('entry-is-fav').checked;
+      const rating = parseFloat(document.getElementById('entry-rating').value) || 0;
+      const progress = document.getElementById('entry-progress').value.trim();
+      const character = document.getElementById('entry-character').value.trim();
+      const imgUrl = document.getElementById('entry-img-url').value.trim();
+      const tagsRaw = document.getElementById('entry-tags').value;
+      const tags = tagsRaw.split(',').map(t => t.trim()).filter(t => t.length > 0);
+      const review = document.getElementById('entry-review').value.trim();
+
+      const currentDate = new Date().toISOString().split('T')[0];
+
+      if (editId) {
+        const index = diaryEntries.findIndex(a => a.id === editId);
+        if (index !== -1) {
+          diaryEntries[index] = {
+            ...diaryEntries[index],
+            title,
+            category,
+            status,
+            isFavorite,
+            rating,
+            progress,
+            character,
+            imgUrl,
+            imgData: uploadedImageData || diaryEntries[index].imgData || "",
+            tags,
+            review
+          };
+          showToast('✏️ บันทึกการแก้ไขใน Ly diary เรียบร้อยแล้ว!');
+        }
+      } else {
+        const newEntry = {
+          id: 'entry-' + Date.now(),
+          title,
+          category,
+          status,
+          isFavorite,
+          rating,
+          progress,
+          character,
+          imgUrl,
+          imgData: uploadedImageData,
+          tags,
+          review,
+          createdAt: currentDate
+        };
+        diaryEntries.unshift(newEntry);
+        showToast('✨ เพิ่มเรื่องใหม่ลงใน Ly diary เรียบร้อยแล้ว!');
+      }
+
+      saveData();
+      renderStats();
+      renderGrid();
+      closeModal('anime-modal');
+    }
+
+    // Image preview
+    function previewImageFromUrl() {
+      const url = document.getElementById('entry-img-url').value.trim();
+      const previewImg = document.getElementById('preview-img');
+      const fallback = document.getElementById('preview-fallback');
+
+      if (url) {
+        previewImg.src = url;
+        previewImg.style.display = 'block';
+        fallback.style.display = 'none';
+        uploadedImageData = "";
+      } else if (!uploadedImageData) {
+        resetImagePreview();
+      }
+    }
+
+    function previewImageFromFile(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        uploadedImageData = e.target.result;
+        const previewImg = document.getElementById('preview-img');
+        const fallback = document.getElementById('preview-fallback');
+        previewImg.src = uploadedImageData;
+        previewImg.style.display = 'block';
+        fallback.style.display = 'none';
+        document.getElementById('entry-img-url').value = '';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function resetImagePreview() {
+      const previewImg = document.getElementById('preview-img');
+      const fallback = document.getElementById('preview-fallback');
+      previewImg.src = '';
+      previewImg.style.display = 'none';
+      fallback.style.display = 'flex';
+    }
+
+    // Modal Utils
+    function openModal(id) { document.getElementById(id).classList.add('active'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+    function openBackupModal() { openModal('backup-modal'); }
+
+    // Toast
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').innerText = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    // Backup & Restore
+    function exportData() {
+      const jsonStr = JSON.stringify(diaryEntries, null, 2);
+      const blob = new Blob([jsonStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `my_ly_diary_backup_${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast('💾 ส่งออกไฟล์สำรองข้อมูล Ly diary เรียบร้อย!');
+    }
+
+    function importData(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const parsed = JSON.parse(e.target.result);
+          if (Array.isArray(parsed)) {
+            diaryEntries = parsed;
+            saveData();
+            renderStats();
+            renderGrid();
+            closeModal('backup-modal');
+            showToast('📥 กู้คืนข้อมูลสำเร็จเรียบร้อยแล้ว!');
+          } else {
+            alert('รูปแบบไฟล์ไม่ถูกต้อง โปรดใช้ไฟล์ .json ที่ส่งออกจากระบบ');
+          }
+        } catch (err) {
+          alert('เกิดข้อผิดพลาดในการอ่านไฟล์ JSON: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function resetToSamplePrompt() {
+      if (confirm('คุณแน่ใจหรือไม่ว่าต้องการรีเซ็ตข้อมูลทั้งหมดกลับเป็นข้อมูลตัวอย่างเริ่มต้น?')) {
+        diaryEntries = [...SAMPLE_ENTRIES];
+        saveData();
+        renderStats();
+        renderGrid();
+        closeModal('backup-modal');
+        showToast('🔄 รีเซ็ตข้อมูลกลับสู่ค่าเริ่มต้นแล้ว!');
+      }
+    }
+
+    function escapeHtml(string) {
+      if (!string) return '';
+      return String(string)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+</html>
